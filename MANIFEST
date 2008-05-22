@@ -1,0 +1,7 @@
+Changes
+MANIFEST
+MANIFEST.skip
+Makefile.PL
+README
+lib/Catalyst/Plugin/Facebook.pm
+t/00-load.t
