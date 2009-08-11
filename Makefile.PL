@@ -11,6 +11,7 @@ WriteMakefile(
     PREREQ_PM => {
         'Test::More' => 0,
         'WWW::Facebook::API' => 0,
+        'Scalar::Util' => 0,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Catalyst-Plugin-Facebook-*' },

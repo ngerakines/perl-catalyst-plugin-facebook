@@ -7,12 +7,14 @@ use WWW::Facebook::API;
 
 our $VERSION = '0.1';
 
+use Scalar::Util qw();
+
 # why not
 *fb = \&facebook;
 
 sub facebook {
     my ($c) = @_;
-    if (! ($c->{'facebook'} and $c->{'facebook'}->isa('WWW::Facebook::API')) ) {
+    unless ( $c->{'facebook'} and Scalar::Util::blessed($c->{'facebook'}) and $c->{'facebook'}->isa('WWW::Facebook::API') ) {
         $c->{'facebook'} = WWW::Facebook::API->new(
             'desktop' => 0,
             'format' => 'JSON',
