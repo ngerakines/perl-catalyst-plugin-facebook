@@ -12,7 +12,7 @@ our $VERSION = '0.1';
 
 sub facebook {
     my ($c) = @_;
-    if (! $c->{'facebook'}) {
+    if (! ($c->{'facebook'} and $c->{'facebook'}->isa('WWW::Facebook::API')) ) {
         $c->{'facebook'} = WWW::Facebook::API->new(
             'desktop' => 0,
             'format' => 'JSON',
